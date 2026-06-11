@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contactForm");
   const formNote = document.getElementById("formNote");
 
-  contactForm?.addEventListener("submit", (e) => {
+  contactForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const name = document.getElementById("cName").value.trim();
     const email = document.getElementById("cEmail").value.trim();
@@ -206,18 +206,22 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Opens the visitor's email app pre-filled (no backend required)
+    // 1) Save the message to Supabase
+    if (window.SUPA) {
+      note("Sending…", "");
+      const { error } = await window.SUPA.from("messages").insert({ name, email, subject, message: msg });
+      if (error) { note("Could not send: " + error.message, "err"); return; }
+      note("Message sent ✓ Thank you!", "ok");
+      setTimeout(() => { contactForm.reset(); note("", ""); closeModal(); }, 1300);
+      return;
+    }
+
+    // 2) Fallback (no Supabase): open the email app
     const mailto =
       "mailto:info@ayubkahil.so" +
       "?subject=" + encodeURIComponent(subject + " — from " + name) +
       "&body=" + encodeURIComponent(msg + "\n\nFrom: " + name + " (" + email + ")");
-
-    note("Thanks! Opening your email app…", "ok");
-    setTimeout(() => {
-      window.location.href = mailto;
-      contactForm.reset();
-      note("", "");
-      closeModal();
-    }, 900);
+    note("Opening your email app…", "ok");
+    setTimeout(() => { window.location.href = mailto; contactForm.reset(); note("", ""); closeModal(); }, 900);
   });
 });

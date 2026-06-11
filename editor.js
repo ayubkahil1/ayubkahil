@@ -201,20 +201,46 @@
     if (s) { s.textContent = "Saved ✓"; setTimeout(() => (s.textContent = "Saved locally"), 1200); }
   }
 
-  /* ---------- Load published base (content.json) then local overrides ---------- */
+  /* ---------- Load published base (Supabase → content.json) then local overrides ---------- */
   async function loadBase() {
+    let base = null;
     try {
-      const r = await fetch("content.json", { cache: "no-store" });
-      if (r.ok) {
-        const base = await r.json();
-        const adds = (edits.workAdds && edits.workAdds.length) ? edits.workAdds : base.workAdds;
-        const del = (edits.workDel && edits.workDel.length) ? edits.workDel : base.workDel;
-        edits = Object.assign({}, base, edits);
-        edits.workAdds = adds || [];
-        edits.workDel = del || [];
+      if (window.SUPA) {
+        const { data } = await window.SUPA.from("site_content").select("data").eq("id", 1).maybeSingle();
+        if (data && data.data && Object.keys(data.data).length) base = data.data;
       }
-    } catch (e) { /* no content.json yet */ }
+    } catch (e) { /* ignore */ }
+    if (!base) {
+      try { const r = await fetch("content.json", { cache: "no-store" }); if (r.ok) base = await r.json(); } catch (e) {}
+    }
+    if (base) {
+      const adds = (edits.workAdds && edits.workAdds.length) ? edits.workAdds : base.workAdds;
+      const del = (edits.workDel && edits.workDel.length) ? edits.workDel : base.workDel;
+      edits = Object.assign({}, base, edits);
+      edits.workAdds = adds || [];
+      edits.workDel = del || [];
+    }
+    applyTheme();
     applyAll();
+  }
+
+  /* ---------- Auth gate (Supabase Auth, or local password fallback) ---------- */
+  async function ensureAuth() {
+    if (window.SUPA) {
+      const { data: { session } } = await window.SUPA.auth.getSession();
+      if (session) return true;
+      const email = await edPrompt("Editor email:", { placeholder: "you@email.com" });
+      if (!email) return false;
+      const password = await edPrompt("Password:", { password: true, placeholder: "Password" });
+      if (!password) return false;
+      const { error } = await window.SUPA.auth.signInWithPassword({ email: email.trim(), password });
+      if (error) { await edAlert("Login failed: " + error.message); return false; }
+      return true;
+    }
+    const p = await edPrompt("Enter password to edit this site:", { password: true, placeholder: "Password" });
+    if (p === PASSWORD) return true;
+    if (p !== null) await edAlert("Wrong password.");
+    return false;
   }
 
   /* ---------- File picker ---------- */
@@ -389,12 +415,22 @@
   }
 
   async function publish() {
+    if (window.SUPA) {
+      const { data: { session } } = await window.SUPA.auth.getSession();
+      if (!session) { await edAlert("Please re-open Edit Mode and log in first."); return; }
+      const { error } = await window.SUPA.from("site_content")
+        .upsert({ id: 1, data: edits, updated_at: new Date().toISOString() });
+      if (error) { await edAlert("Publish failed: " + error.message); return; }
+      await edAlert("Published! Your changes are now live for everyone. 🎉");
+      return;
+    }
+    // fallback (no Supabase): download content.json
     const blob = new Blob([JSON.stringify(edits, null, 2)], { type: "application/json" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = "content.json";
     a.click();
-    await edAlert("content.json downloaded. Upload it to your website folder (next to index.html), then re-deploy so everyone sees your changes.");
+    await edAlert("content.json downloaded. Upload it next to index.html, then re-deploy.");
   }
 
   async function resetAll() {
@@ -750,9 +786,7 @@
       renderRoute();
       window.addEventListener("hashchange", () => { if (location.hash !== "#edit") renderRoute(); });
       if (location.hash === "#edit") {
-        const p = await edPrompt("Enter password to edit this site:", { password: true, placeholder: "Password" });
-        if (p === PASSWORD) { enableEdit(); renderRoute(); }
-        else if (p !== null) await edAlert("Wrong password.");
+        if (await ensureAuth()) { enableEdit(); renderRoute(); }
       }
     });
   }
