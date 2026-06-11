@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ayubkahil — Video Editor. Editing that grows channels across YouTube, Shorts, Reels & TikTok." />
+  <title>Ayubkahil — Video Editor</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-pill">
+      <a href="#home" class="nav-brand">
+        <span class="nav-avatar">A</span>
+        <span class="nav-handle">Ayubkahil</span>
+      </a>
+
+      <span class="nav-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+
+      <div class="nav-expand">
+        <nav class="nav-links" id="navLinks">
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+        </nav>
+        <a href="#contact" class="nav-contact">Contact</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+
+      <!-- Left: text -->
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="dot"></span> Hurry, only 3 spots left
+        </div>
+        <h1 class="hero-title">
+          Editing That <span class="accent">Grows Channels.</span>
+        </h1>
+        <p class="hero-sub">
+          YouTube long-form, Shorts, Reels &amp; TikTok editing for creators
+          who want retention, watch time, and consistency.
+        </p>
+        <div class="hero-buttons">
+          <a href="#work" class="btn btn-primary">View Work</a>
+          <a href="#process" class="btn btn-ghost">How It Works</a>
+        </div>
+
+        <div class="hero-proof">
+          <div class="avatars">
+            <span>A</span><span>B</span><span>C</span><span>D</span>
+          </div>
+          <p>Worked with <strong>100+ creators</strong></p>
+        </div>
+      </div>
+
+      <!-- Right: video -->
+      <!-- Si aad video gaaraha u gelido:
+           1) YouTube: ku beddel VIDEO_ID-ga src-ka iframe-ka hoose.
+           2) MP4: tirtir iframe-ka, ka furo <video> tag-ka. -->
+      <div class="hero-media">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/wwIt5ZvROrs?autoplay=1&mute=1&loop=1&playlist=wwIt5ZvROrs&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1"
+            title="Showreel"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== TRUSTED BY ===================== -->
+  <section class="logos">
+    <div class="container logos-inner">
+      <span class="logos-label">Trusted by <strong>many</strong></span>
+      <div class="logos-marquee">
+      <div class="logos-track">
+        <!-- set 1 -->
+        <img src="https://cdn.simpleicons.org/nike/6b7280" alt="Nike" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/adidas/6b7280" alt="Adidas" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/reebok/6b7280" alt="Reebok" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/redbull/6b7280" alt="Red Bull" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/toyota/6b7280" alt="Toyota" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/thenorthface/6b7280" alt="The North Face" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/puma/6b7280" alt="Puma" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/spotify/6b7280" alt="Spotify" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/samsung/6b7280" alt="Samsung" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/sony/6b7280" alt="Sony" onerror="this.style.display='none'" />
+        <!-- set 2 (duplicate for seamless loop) -->
+        <img src="https://cdn.simpleicons.org/nike/6b7280" alt="" aria-hidden="true" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/adidas/6b7280" alt="" aria-hidden="true" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/reebok/6b7280" alt="" aria-hidden="true" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/redbull/6b7280" alt="" aria-hidden="true" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/toyota/6b7280" alt="" aria-hidden="true" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/thenorthface/6b7280" alt="" aria-hidden="true" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/puma/6b7280" alt="" aria-hidden="true" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/spotify/6b7280" alt="" aria-hidden="true" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/samsung/6b7280" alt="" aria-hidden="true" onerror="this.style.display='none'" />
+        <img src="https://cdn.simpleicons.org/sony/6b7280" alt="" aria-hidden="true" onerror="this.style.display='none'" />
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES (scroll-reveal feature) ===================== -->
+  <section class="section" id="services">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-tag">Services</p>
+        <h2 class="section-title">Our best Services</h2>
+        <p class="section-desc">Everything you need to scale your content.</p>
+      </header>
+
+      <div class="features">
+        <article class="feature">
+          <div class="feature-text">
+            <span class="feature-num">01</span>
+            <h3>YouTube Long-Form Editing</h3>
+            <p>Professional long-form video editing focused on pacing, b-roll, sound design and storytelling that holds attention from start to finish.</p>
+            <a class="feature-link" href="#contact">Book Edit →</a>
+          </div>
+          <div class="feature-visual">
+            <iframe
+              src="https://www.youtube.com/embed/jX4dLxiso6A?autoplay=1&mute=1&loop=1&playlist=jX4dLxiso6A&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1"
+              title="YouTube Long-Form Editing"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <span class="feature-num">02</span>
+            <h3>Short-Form Repurposing</h3>
+            <p>Turn one long video into a stream of Shorts, Reels &amp; TikToks — punchy captions, fast cuts and a flow built for the algorithm.</p>
+            <a class="feature-link" href="#contact">Book Edit →</a>
+          </div>
+          <div class="feature-visual">
+            <iframe
+              src="https://www.youtube.com/embed/SgmuplXU2iY?autoplay=1&mute=1&loop=1&playlist=SgmuplXU2iY&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1"
+              title="Short-Form Repurposing"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <span class="feature-num">03</span>
+            <h3>Thumbnail Design</h3>
+            <p>Scroll-stopping, click-worthy thumbnails built on viewer psychology — designed to lift your click-through rate and impressions.</p>
+            <a class="feature-link" href="#contact">Get Started →</a>
+          </div>
+          <div class="feature-visual">
+            <iframe
+              src="https://www.youtube.com/embed/aAvDI1qae-U?autoplay=1&mute=1&loop=1&playlist=aAvDI1qae-U&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1"
+              title="Thumbnail Design"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <span class="feature-num">04</span>
+            <h3>Color Grading</h3>
+            <p>Cinematic color and tone that give every video a polished, premium and instantly recognizable look for your brand.</p>
+            <a class="feature-link" href="#contact">Get Started →</a>
+          </div>
+          <div class="feature-visual">
+            <iframe
+              src="https://www.youtube.com/embed/-uHLJY66PDM?autoplay=1&mute=1&loop=1&playlist=-uHLJY66PDM&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1"
+              title="Color Grading"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WORK / PROJECTS (reels) ===================== -->
+  <section class="section section-soft" id="work">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-tag">Projects</p>
+        <h2 class="section-title">Selected Editing Work</h2>
+        <p class="section-desc">A showcase of visual styles and creative editing across long-form and short-form content.</p>
+      </header>
+
+      <div class="filters" id="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="short">Short-Form &amp; Reels</button>
+        <button class="filter" data-filter="youtube">Youtube</button>
+      </div>
+
+      <div class="reels-grid" id="workGrid">
+
+        <article class="work-item reel" data-cat="youtube">
+          <div class="reel-head"><span class="reel-avatar">D</span><span class="reel-name">Daniel Hart</span><span class="reel-verified">✔</span></div>
+          <div class="reel-video">
+            <iframe src="https://www.youtube.com/embed/jX4dLxiso6A?autoplay=1&mute=1&loop=1&playlist=jX4dLxiso6A&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Daniel Hart" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article class="work-item reel" data-cat="short">
+          <div class="reel-head"><span class="reel-avatar">M</span><span class="reel-name">Marcus Reid</span><span class="reel-verified">✔</span></div>
+          <div class="reel-video">
+            <iframe src="https://www.youtube.com/embed/SgmuplXU2iY?autoplay=1&mute=1&loop=1&playlist=SgmuplXU2iY&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Marcus Reid" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article class="work-item reel" data-cat="youtube">
+          <div class="reel-head"><span class="reel-avatar">B</span><span class="reel-name">Brandon</span><span class="reel-verified">✔</span></div>
+          <div class="reel-video">
+            <iframe src="https://www.youtube.com/embed/aAvDI1qae-U?autoplay=1&mute=1&loop=1&playlist=aAvDI1qae-U&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Brandon" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article class="work-item reel" data-cat="short">
+          <div class="reel-head"><span class="reel-avatar">E</span><span class="reel-name">Ethan Cole</span><span class="reel-verified">✔</span></div>
+          <div class="reel-video">
+            <iframe src="https://www.youtube.com/embed/-uHLJY66PDM?autoplay=1&mute=1&loop=1&playlist=-uHLJY66PDM&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Ethan Cole" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article class="work-item reel" data-cat="youtube">
+          <div class="reel-head"><span class="reel-avatar">J</span><span class="reel-name">Joshua Miles</span><span class="reel-verified">✔</span></div>
+          <div class="reel-video">
+            <iframe src="https://www.youtube.com/embed/wwIt5ZvROrs?autoplay=1&mute=1&loop=1&playlist=wwIt5ZvROrs&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Joshua Miles" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article class="work-item reel" data-cat="short">
+          <div class="reel-head"><span class="reel-avatar">N</span><span class="reel-name">Nathan Brooks</span><span class="reel-verified">✔</span></div>
+          <div class="reel-video">
+            <iframe src="https://www.youtube.com/embed/jX4dLxiso6A?autoplay=1&mute=1&loop=1&playlist=jX4dLxiso6A&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Nathan Brooks" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY ME ===================== -->
+  <section class="section" id="philosophy">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-tag">Why Me</p>
+        <h2 class="section-title">More than just "cutting" footage.</h2>
+        <p class="section-desc">Every frame is shaped with intention — from clean cuts and motion to balanced color and sound.</p>
+      </header>
+
+      <div class="why-grid">
+
+        <!-- Big reel card -->
+        <article class="why-feature">
+          <div class="why-video">
+            <iframe src="https://www.youtube.com/embed/SgmuplXU2iY?autoplay=1&mute=1&loop=1&playlist=SgmuplXU2iY&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&enablejsapi=1" title="Psychology-Driven" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          <div class="why-feature-text">
+            <h3>Psychology-Driven</h3>
+            <p>I edit based on viewer retention graphs to keep eyes on the screen.</p>
+          </div>
+        </article>
+
+        <!-- Right cards -->
+        <div class="why-right">
+          <article class="why-card">
+            <div class="why-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg>
+            </div>
+            <h3>Native Style</h3>
+            <p>I know the difference between a YouTube "Jump-cut" and a TikTok "Zoom-cut."</p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+            </div>
+            <h3>Fast Turnaround</h3>
+            <p>48-72 hour delivery for short-form content. No more missed upload dates.</p>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESS ===================== -->
+  <section class="section process" id="process">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-tag">Process</p>
+        <h2 class="section-title">From Raw File to Render.</h2>
+        <p class="section-desc">A showcase of visual styles, pacing, and creative editing across different content formats — from cinematic long-form videos to fast-paced short-form cuts.</p>
+      </header>
+
+      <div class="process-grid">
+        <article class="process-card">
+          <div class="process-top">
+            <span class="dots"><i class="on"></i><i></i><i></i><i></i></span>
+            <span class="process-num">01</span>
+          </div>
+          <h3>Content received</h3>
+          <p>Drop your footage in our shared Google Drive/Dropbox.</p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-top">
+            <span class="dots"><i class="on"></i><i class="on"></i><i></i><i></i></span>
+            <span class="process-num">02</span>
+          </div>
+          <h3>Edit &amp; Flow</h3>
+          <p>I apply pacing, sound design, and motion graphics.</p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-top">
+            <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
+            <span class="process-num">03</span>
+          </div>
+          <h3>Revisions</h3>
+          <p>You get 2 rounds of revisions via Frame.io.</p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-top">
+            <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+            <span class="process-num">04</span>
+          </div>
+          <h3>Delivery &amp; Reuse</h3>
+          <p>High-resolution files built for impact and ready to go viral.</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="about-heading">
+        <span class="muted">A modern renaissance approach</span> to visual storytelling.
+      </h2>
+
+      <div class="about-grid">
+        <!-- Left: portrait + name -->
+        <div class="about-photo-col">
+          <div class="about-photo">
+            <div class="about-socials">
+              <a href="#" aria-label="YouTube"><img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube" /></a>
+              <a href="#" aria-label="Instagram"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt="Instagram" /></a>
+              <a href="#" aria-label="TikTok"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok" /></a>
+            </div>
+          </div>
+          <h3 class="about-name">Ayubkahil</h3>
+          <p class="about-role">video editor, filmmaker, creative</p>
+        </div>
+
+        <!-- Right: text -->
+        <div class="about-body">
+          <p><strong>I picked up editing over a decade ago — and never looked back.</strong></p>
+          <p>What started with simple cuts grew into cinematic videos, campaigns, and branded storytelling. I move between editing, motion, and creative direction—always chasing the best way to tell each story.</p>
+          <p><strong>Being a modern creator means pushing creative boundaries.</strong></p>
+          <p>From cinematic edits to punchy reels and full campaigns, I aim to build work that feels distinct—something that breaks the scroll and makes you pause.</p>
+          <p><strong>Details matter because they carry intention.</strong></p>
+          <p>Every frame, every edit, every beat has to serve the story. If it doesn't, it doesn't stay.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="section section-soft" id="faq">
+    <div class="container narrow">
+      <header class="section-head">
+        <p class="section-tag">FAQ</p>
+        <h2 class="section-title">Frequently asked questions</h2>
+      </header>
+
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-q">How long does an edit take? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Most edits are delivered within 24–48 hours, depending on the length and complexity of the project.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What software do you use? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Adobe Premiere Pro, After Effects, and DaVinci Resolve for color grading.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How many revisions do I get? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Unlimited revisions — I keep refining until you're completely satisfied.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How do we get started? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Click "Book a Call", we'll discuss your needs, and then we get started right away.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact lives in the floating button + popup at the bottom of <body> -->
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="logo">Ayubkahil<span>.</span></a>
+      <nav class="footer-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="mailto:info@ayubkahil.so">Email</a>
+      </nav>
+      <p class="copy">&copy; <span id="year"></span> Ayubkahil. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING CONTACT BUTTON ===================== -->
+  <button class="contact-fab" id="contactFab" aria-label="Contact" aria-haspopup="dialog">
+    <span class="fab-inner">
+      <span class="fab-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </span>
+      <span class="fab-label">Contact</span>
+    </span>
+  </button>
+
+  <!-- ===================== CONTACT POPUP ===================== -->
+  <div class="modal" id="contactModal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-label="Contact">
+      <button class="modal-close" data-close aria-label="Close">&times;</button>
+      <h2 class="modal-title">Contact</h2>
+      <p class="modal-sub">Fill out the form below.</p>
+
+      <div class="modal-profile">
+        <span class="modal-avatar">A</span>
+        <div>
+          <strong>Ayubkahil</strong>
+          <span>info@ayubkahil.so</span>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-field">
+          <label for="cName">Name <em>(required)</em></label>
+          <input type="text" id="cName" placeholder="Name" required />
+        </div>
+        <div class="form-field">
+          <label for="cEmail">Email <em>(required)</em></label>
+          <input type="email" id="cEmail" placeholder="Email" required />
+        </div>
+        <div class="form-field">
+          <label for="cSubject">Subject <em>(required)</em></label>
+          <input type="text" id="cSubject" placeholder="Subject" required />
+        </div>
+        <div class="form-field">
+          <label for="cMsg">Message <em>(required)</em></label>
+          <textarea id="cMsg" rows="4" placeholder="Message" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Submit
+        </button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>
